@@ -4,44 +4,24 @@ import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="bg-slate-600 min-h-screen">
+    <main class="mx-auto w-full max-w-screen-sm px-4 border min-h-screen">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit quasi...
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic asperiores vero, dignissimos
+        neque voluptas omnis ex itaque enim accusantium, illum quas, temporibus aperiam dolorem
+        fugiat sint pariatur libero iusto quod. Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Hic asperiores vero, dignissimos neque voluptas omnis ex itaque enim accusantium,
+        illum quas, temporibus aperiam dolorem fugiat sint pariatur libero iusto quod. Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Hic asperiores vero, dignissimos neque
+        voluptas omnis ex itaque enim accusantium, illum quas, temporibus aperiam dolorem fugiat
+        sint pariatur libero iusto quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Hic asperiores vero, dignissimos neque voluptas omnis ex itaque enim accusantium, illum
+        quas, temporibus aperiam dolorem fugiat sint pariatur libero iusto quod. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Hic asperiores vero, dignissimos neque voluptas
+        omnis ex itaque enim accusantium, illum quas, temporibus aperiam dolorem fugiat sint
+        pariatur libero iusto quod.
+      </p>
+    </main>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
