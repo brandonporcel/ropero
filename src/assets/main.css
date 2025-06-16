@@ -1,1 +1,106 @@
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('./font/static/Geist-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('./font/static/Geist-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('./font/static/Geist-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('./font/static/Geist-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('./font/Geist-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Set Geist Medium (400) as the default font */
+@layer base {
+  html {
+    font-family:
+      'Geist Sans',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      sans-serif;
+    font-weight: 400; /* This makes Medium the default weight */
+  }
+
+  body {
+    font-family:
+      'Geist Sans',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      sans-serif;
+    font-weight: 400; /* Medium as default */
+  }
+}
+
+/* Custom utility classes for different weights */
+@layer utilities {
+  .font-geist-light {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .font-geist-regular {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  .font-geist-medium {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-geist-semibold {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-geist-bold {
+    font-family: 'Geist Sans', sans-serif;
+    font-weight: 700;
+  }
+}
