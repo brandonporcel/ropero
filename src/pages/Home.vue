@@ -3,15 +3,16 @@ import Ironing3 from '@/components/icons/Ironing3.vue';
 import NoBleach from '@/components/icons/NoBleach.vue';
 import WashThumbleOff from '@/components/icons/WashThumbleOff.vue';
 import WashTemperature1 from '@/components/icons/WashTemperature1.vue';
+import Layout from '@/components/Layout.vue';
 import { CircleHelp } from 'lucide-vue-next';
 import { RouterLink } from 'vue-router';
 const numbers = new Array(23).fill(null).map((_, i) => i + 1);
 
-const selectedNumber = 6;
+const selectedNumber = 23;
 </script>
 
 <template>
-  <main class="mx-auto w-full max-w-screen-sm border min-h-screen py-8 md:py-12 lg:py-24">
+  <Layout class="md:py-12 lg:py-24">
     <div class="grid grid-cols-9 gap-x-1 bg-[#181818] p-2 rounded-ee-lg rounded-tr-lg w-72 pl-22">
       <span
         v-for="number in numbers"
@@ -68,7 +69,7 @@ const selectedNumber = 6;
     <footer>
       <h1 class="font-bold text-center">ROPERO</h1>
     </footer>
-  </main>
+  </Layout>
 
   <RouterLink class="fixed bottom-4 right-4 hover:opacity-70" alt="Help" to="/about">
     <CircleHelp class="cursor-pointer" alt="Help" />

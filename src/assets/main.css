@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'Geist Sans';
-  src: url('./font/Geist-Bold.ttf') format('truetype');
+  src: url('./font/static/Geist-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
