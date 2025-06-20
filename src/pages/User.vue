@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 import Layout from '@/components/Layout.vue';
@@ -10,13 +10,21 @@ const router = useRouter();
 const store = useWearableStore();
 const username = route.params.username as string;
 
-const goToDetailPage = (slug: string) => {
-  router.push(`/${username}/${slug}`);
+const goToDetailPage = (wearable: any) => {
+  router.push(`/${username}/${wearable.slug}`);
+  store.saveWearable(wearable);
 };
 
 onMounted(() => {
   store.fetchAll(username);
 });
+
+watch(
+  () => store.items,
+  (newItems) => {
+    console.log('Cambió store.items:', newItems);
+  },
+);
 </script>
 
 <template>
@@ -39,11 +47,12 @@ onMounted(() => {
         v-for="wearable in store.items"
         :key="wearable.slug"
         class="bg-white aspect-square flex items-center justify-center cursor-pointer"
-        @click="goToDetailPage(wearable.slug)"
+        @click="goToDetailPage(wearable)"
       >
         <img
           :src="wearable.thumbnail || defaultImage"
           :alt="wearable.name"
+          :title="wearable.name"
           class="w-full h-full object-cover"
         />
       </div>

@@ -1,23 +1,22 @@
 <script setup lang="ts">
+import type { Wearable } from '@/lib/types';
 import Ironing3 from '@/components/icons/Ironing3.vue';
 import NoBleach from '@/components/icons/NoBleach.vue';
 import WashTemperature1 from '@/components/icons/WashTemperature1.vue';
 import WashThumbleOff from '@/components/icons/WashThumbleOff.vue';
 
 import WearableType from './WearableType.vue';
+
+const { wearable } = defineProps<{ wearable: Wearable }>();
 </script>
 <template>
-  <WearableType :selectedNumber="23" />
+  <WearableType :selectedNumber="wearable.type" />
 
   <section class="my-2 px-22">
-    <p class="text-xs">
-      The running cap from the limited Nike NOCTA collection is not only a practical wardrobe item,
-      but also a unique accent that reflects Drake's style and ...
+    <p class="text-xs mb-2 text-justify">
+      {{ wearable.description }}
     </p>
-    <img
-      src="https://szopex.blob.core.windows.net/shops/media/f1000/2023/nike/224583/nike-x-nocta-rf-cap-fd5465-902-651aaf379ba69.webp"
-      alt="Nike cap"
-    />
+    <img :src="wearable.thumbnail" :alt="wearable.name" />
   </section>
 
   <section class="my-2 px-22">

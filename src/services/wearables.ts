@@ -2,9 +2,8 @@ const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 class WearableService {
   static async getWearablesByUser(username: string): Promise<any[]> {
-    const res = await fetch(`${API_URL}/${username}`);
+    const res = await fetch(`${API_URL}/${username}/wearables`);
     if (!res.ok) throw new Error('Error fetching wearables');
-    console.log('res', res);
     return res.json();
   }
 
