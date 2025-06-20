@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Wearable from './pages/Wearable.vue';
 import About from './pages/About.vue';
 import User from './pages/User.vue';
+import Wearable from './pages/Wearable.vue';
 
 const routes = [
   { path: '/', redirect: '/hardouserwithfunnyname' },

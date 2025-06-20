@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import Layout from '@/components/Layout.vue';
 import { CircleHelp } from 'lucide-vue-next';
 import { RouterLink } from 'vue-router';
-import WearableSkeleton from '@/components/WearableSkeleton.vue';
+
+import Layout from '@/components/Layout.vue';
 import WearableItem from '@/components/WearableItem.vue';
+import WearableSkeleton from '@/components/WearableSkeleton.vue';
 </script>
 
 <template>

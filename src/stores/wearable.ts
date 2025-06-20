@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+
 import WearableService from '@/services/wearables';
 
 export const useWearableStore = defineStore('wearables', {

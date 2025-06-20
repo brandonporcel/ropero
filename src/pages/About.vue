@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { House } from 'lucide-vue-next';
+
 import Layout from '@/components/Layout.vue';
 </script>
 

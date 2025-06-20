@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Layout from '@/components/Layout.vue';
 import { onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+
+import Layout from '@/components/Layout.vue';
 import { useWearableStore } from '@/stores/wearable';
 
 const route = useRoute();

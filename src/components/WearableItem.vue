@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import WashThumbleOff from '@/components/icons/WashThumbleOff.vue';
-import WashTemperature1 from '@/components/icons/WashTemperature1.vue';
 import Ironing3 from '@/components/icons/Ironing3.vue';
 import NoBleach from '@/components/icons/NoBleach.vue';
+import WashTemperature1 from '@/components/icons/WashTemperature1.vue';
+import WashThumbleOff from '@/components/icons/WashThumbleOff.vue';
+
 import WearableType from './WearableType.vue';
 </script>
 <template>
