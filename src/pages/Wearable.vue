@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { CircleHelp } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 import Layout from '@/components/Layout.vue';
 import WearableItem from '@/components/WearableItem.vue';
@@ -30,8 +29,4 @@ onMounted(() => {
       Wearable with name {{ slug }} not found. 😢
     </p>
   </Layout>
-
-  <RouterLink class="fixed bottom-4 right-4 hover:opacity-70" alt="Help" to="/about">
-    <CircleHelp class="cursor-pointer" />
-  </RouterLink>
 </template>

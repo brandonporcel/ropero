@@ -9,14 +9,11 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-ironing-3"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-bleach"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M12 15h.01" />
     <path
-      d="M9 6h7.459a3 3 0 0 1 2.959 2.507l.577 3.464l.81 4.865a1 1 0 0 1 -.985 1.164h-16.82a7 7 0 0 1 7 -7h9.8"
+      d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75"
     />
-    <path d="M9 15h.01" />
-    <path d="M15 15h.01" />
   </svg>
 </template>
