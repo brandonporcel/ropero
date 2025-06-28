@@ -1,14 +1,18 @@
 export type WashInstruction =
-  | 'inDry'
-  | 'noInDry' // No lavar en seco.
-  | 'bleachAllowed'
+  | 'tumbleDryLow' // Usar secadora en baja temperatura
+  | 'tumbleDry' // Usar secadora
+  | 'noTumbleDry' // No usar secadora
+  | 'dryClean' // Lavado en seco
+  | 'noDryClean' // No limpieza en seco
+  | 'dryCleanHydrocarbons' // Lavado en seco con hidrocarburos
+  | 'bleachAllowed' // Usar blanqueador
   | 'noBleachAllowed' // No usar blanqueador
-  | 'washTemperature1' // Lavar a máquina en temperatura fría y en ciclo delicado.
-  | 'washDry1' // Puede utilizarse secadora en tempratura baja.
-  | 'iron1' // Planchar a temperatura baja.
+  | 'washTemperature1' // Lavar a máquina en temperatura fría y ciclo delicado
+  | 'washDry1' // Usar secadora en temperatura baja
+  | 'iron1' // Planchar a temperatura baja
   | 'iron2' // Planchar a temperatura alta
-  | 'noDryer' // No utillizar secadora
-  | 'handWash'; // Lavar a mano
+  | 'handWash' // Lavar a mano
+  | 'removePromptly'; // Retirar inmediatamente tras lavado
 
 export type ExtraWashInstruction =
   | 'withZippers' // Lavar con cierres ajustados
@@ -32,8 +36,14 @@ export interface Wearable {
     shoulders_width: number;
   };
   composition?: {
-    cotton: string;
-    polyester: string;
+    cotton: number;
+    recycledCotton: number;
+    polyester: number;
+    nylon: number;
+    elastane: number;
+    polyamide: number;
+    liningViscose: number;
+    liningCupro: number;
   };
   wash?: WashInstruction[];
   extra?: ExtraWashInstruction[];
