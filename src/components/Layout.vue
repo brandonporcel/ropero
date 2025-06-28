@@ -2,6 +2,7 @@
 import { CircleHelp } from 'lucide-vue-next';
 import { RouterLink } from 'vue-router';
 
+// @ts-ignore
 import CustomFollower from './CursorFollower.vue';
 </script>
 

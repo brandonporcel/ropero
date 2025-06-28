@@ -2,6 +2,7 @@
 import { vTooltip } from 'floating-vue';
 import { computed, ref } from 'vue';
 
+import { WearableType } from '@/lib/enums';
 import type { WashInstruction, Wearable } from '@/lib/types';
 import {
   buttonStyles,
@@ -10,8 +11,6 @@ import {
   washInstructionText,
   washInstructionToProgramRecommendation,
 } from '@/lib/wash-instructions';
-
-import WearableType from './WearableType.vue';
 
 const cursor = ref();
 const hoveredInstruction = ref<WashInstruction | null>(null);
@@ -29,6 +28,9 @@ const recommendedProgram = computed(() => {
       return 'Algodón';
     }
     if (wearable.composition.polyester && wearable.composition.polyester >= 80) {
+      return 'Sintético';
+    }
+    if (wearable.composition.nylon && wearable.composition.nylon >= 80) {
       return 'Sintético';
     }
   }
@@ -79,7 +81,7 @@ function hideCursor() {
     </p>
   </section>
 
-  <section v-if="wearable.wash?.length" class="mt-4 px-22 relative z-[300]">
+  <section v-if="recommendedProgram" class="mt-4 px-22 relative z-[300]">
     <div class="flex items-center justify-center gap-2">
       <component
         v-tooltip="washInstructionText[instruction]"
@@ -94,7 +96,10 @@ function hideCursor() {
       </component>
     </div>
 
-    <div v-if="recommendedProgram && wearable.type !== 4" class="relative mt-4">
+    <div
+      v-if="recommendedProgram && wearable.type !== WearableType.ACCESORIES"
+      class="relative mt-4"
+    >
       <img src="../assets/wash/washing-machine.png" class="h-[250px] w-full" />
 
       <div
@@ -107,7 +112,10 @@ function hideCursor() {
     </div>
   </section>
 
-  <p v-if="recommendedProgram && wearable.type !== 4" class="text-center mt-4 font-medium text-sm">
+  <p
+    v-if="recommendedProgram && wearable.type !== WearableType.ACCESORIES"
+    class="text-center mt-4 font-medium text-sm"
+  >
     {{ recommendedProgram }}
   </p>
 
