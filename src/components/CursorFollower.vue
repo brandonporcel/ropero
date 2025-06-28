@@ -1,8 +1,8 @@
 <template>
-  <div ref="follower" class="follower"></div>
+  <div ref="follower" class="follower" tag="follower"></div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
 const follower = ref(null);
@@ -21,7 +21,7 @@ onMounted(() => {
     currentX += dx * ease;
     currentY += dy * ease;
 
-    el.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    (el as any).style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
     requestAnimationFrame(animate);
   };
 

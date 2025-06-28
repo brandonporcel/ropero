@@ -11,7 +11,6 @@ import {
   washInstructionToProgramRecommendation,
 } from '@/lib/wash-instructions';
 
-import CustomCursor from './CursorFollower.vue';
 import WearableType from './WearableType.vue';
 
 const cursor = ref();
@@ -20,16 +19,26 @@ const hoveredInstruction = ref<WashInstruction | null>(null);
 const { wearable } = defineProps<{ wearable: Wearable }>();
 
 const recommendedProgram = computed(() => {
+  if (wearable.composition) {
+    if (wearable.composition.denim) {
+      return 'Jeans';
+    }
+    const cottonTotal =
+      (wearable.composition.cotton || 0) + (wearable.composition.recycledCotton || 0);
+    if (cottonTotal >= 80) {
+      return 'Algodón';
+    }
+    if (wearable.composition.polyester && wearable.composition.polyester >= 80) {
+      return 'Sintético';
+    }
+  }
+
   return (
     wearable.wash
       ?.map((w) => washInstructionToProgramRecommendation[w])
       .filter(Boolean)
       .find(Boolean) || null
   );
-});
-
-const hasSomeValidInstruction = computed(() => {
-  return wearable.wash?.some((instruction) => washIcons[instruction]);
 });
 
 function showCursor(instruction: WashInstruction) {
@@ -47,7 +56,6 @@ function hideCursor() {
 </script>
 
 <template>
-  <CustomCursor ref="cursor" />
   <WearableType :selectedNumber="wearable.type" />
 
   <section class="my-2 px-22">
@@ -58,13 +66,17 @@ function hideCursor() {
   </section>
 
   <section v-if="wearable.sizes" class="my-2 px-22">
-    <h2 class="text-sm font-medium">Medidas</h2>
+    <h2 class="text-sm font-medium">Sizes</h2>
     <p class="text-xs">Autoregulable</p>
   </section>
 
   <section v-if="wearable.composition" class="my-2 px-22">
-    <h2 class="text-sm font-medium">Composición</h2>
-    <p class="text-xs">Frisa invisible 80% algodón / 20% poliéster</p>
+    <h2 class="text-sm font-medium">Composition</h2>
+    <p class="text-xs">
+      <template v-for="(value, key) in wearable.composition" :key="key">
+        {{ key }} {{ value }}% /
+      </template>
+    </p>
   </section>
 
   <section v-if="wearable.wash?.length" class="mt-4 px-22 relative z-[300]">
@@ -82,8 +94,8 @@ function hideCursor() {
       </component>
     </div>
 
-    <div v-if="hasSomeValidInstruction" class="relative w-full mt-4">
-      <img src="../assets/wash/washing-machine.png" class="h-[250px]" />
+    <div v-if="recommendedProgram && wearable.type !== 4" class="relative mt-4">
+      <img src="../assets/wash/washing-machine.png" class="h-[250px] w-full" />
 
       <div
         v-for="(_, key) in washIcons"
@@ -95,7 +107,7 @@ function hideCursor() {
     </div>
   </section>
 
-  <p v-if="recommendedProgram" class="text-center mt-4 font-medium text-sm">
+  <p v-if="recommendedProgram && wearable.type !== 4" class="text-center mt-4 font-medium text-sm">
     {{ recommendedProgram }}
   </p>
 

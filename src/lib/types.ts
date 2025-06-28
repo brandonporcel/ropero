@@ -44,6 +44,7 @@ export interface Wearable {
     polyamide: number;
     liningViscose: number;
     liningCupro: number;
+    denim: number;
   };
   wash?: WashInstruction[];
   extra?: ExtraWashInstruction[];
