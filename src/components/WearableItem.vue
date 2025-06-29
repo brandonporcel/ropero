@@ -71,7 +71,7 @@ function hideCursor() {
 
   <section v-if="wearable.sizes" class="my-2 px-2 md:px-12 lg:px-22">
     <h2 class="text-sm font-medium">Sizes</h2>
-    <p class="text-xs">Autoregulable</p>
+    <p class="text-xs">{{ wearable.sizes.total_large }} x {{ wearable.sizes.total_width }}</p>
   </section>
 
   <section v-if="wearable.composition" class="my-2 px-2 md:px-12 lg:px-22">
