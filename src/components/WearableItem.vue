@@ -12,6 +12,8 @@ import {
   washInstructionToProgramRecommendation,
 } from '@/lib/wash-instructions';
 
+import WearableTypeList from './WearableTypeList.vue';
+
 const cursor = ref();
 const hoveredInstruction = ref<WashInstruction | null>(null);
 
@@ -58,7 +60,7 @@ function hideCursor() {
 </script>
 
 <template>
-  <WearableType :selectedNumber="wearable.type" />
+  <WearableTypeList :selectedNumber="wearable.type" />
 
   <section class="my-2 px-22">
     <p v-if="wearable.description" class="text-xs mb-2 text-justify">

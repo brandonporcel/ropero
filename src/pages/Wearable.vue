@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Layout class="md:py-12 lg:py-24">
+  <Layout>
     <WearableItem v-if="store.wearable" :wearable="store.wearable" />
     <WearableSkeleton v-else-if="store.loading && !store.wearable" />
     <p v-if="store.error && !store.loading" class="text-sm text-white">

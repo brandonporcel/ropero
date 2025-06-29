@@ -1,18 +1,17 @@
 export type WashInstruction =
-  | 'tumbleDryLow' // Usar secadora en baja temperatura
-  | 'tumbleDry' // Usar secadora
-  | 'noTumbleDry' // No usar secadora
-  | 'dryClean' // Lavado en seco
-  | 'noDryClean' // No limpieza en seco
-  | 'dryCleanHydrocarbons' // Lavado en seco con hidrocarburos
-  | 'bleachAllowed' // Usar blanqueador
-  | 'noBleachAllowed' // No usar blanqueador
-  | 'washTemperature1' // Lavar a máquina en temperatura fría y ciclo delicado
-  | 'washDry1' // Usar secadora en temperatura baja
-  | 'iron1' // Planchar a temperatura baja
-  | 'iron2' // Planchar a temperatura alta
-  | 'handWash' // Lavar a mano
-  | 'removePromptly'; // Retirar inmediatamente tras lavado
+  | 'tumbleDry'
+  | 'tumbleDryLow'
+  | 'noTumbleDry'
+  | 'dryClean'
+  | 'noDryClean'
+  | 'dryCleanHydrocarbons'
+  | 'bleachAllowed'
+  | 'noBleachAllowed'
+  | 'washTemperature1'
+  | 'iron1'
+  | 'iron2'
+  | 'handWash'
+  | 'removePromptly';
 
 export type ExtraWashInstruction =
   | 'withZippers' // Lavar con cierres ajustados

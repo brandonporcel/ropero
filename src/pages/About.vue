@@ -9,7 +9,11 @@ import Layout from '@/components/Layout.vue';
     <router-link class="block mx-auto w-max" to="/">
       <House class="cursor-pointer" alt="Home" />
     </router-link>
-    <img src="/public/images/margiela.png" alt="Margiela numbers explanation" />
+    <img
+      class="mx-auto w-max"
+      src="/public/images/margiela.png"
+      alt="Margiela numbers explanation"
+    />
     <img src="/public/images/wash-symbols.jpg" alt="Wash symbols" />
     <a
       href="https://github.com/brandonporcel"

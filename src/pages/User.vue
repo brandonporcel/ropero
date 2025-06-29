@@ -29,13 +29,13 @@ watch(
 
 <template>
   <Layout class="px-2 md:px-0 lg:px-0">
-    <h1 class="font-sm font-medium italic text-white mb-4 lowercase">
+    <h1 class="font-sm font-medium italic text-cyan-400 mb-4 lowercase">
       {{ username }}
     </h1>
 
     <div v-if="store.loading && !store.items.length" class="animate-pulse space-y-4">
       <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-1">
-        <div v-for="i in 22" :key="i" class="bg-white aspect-square" />
+        <div v-for="i in 22" :key="i" class="bg-white aspect-square"></div>
       </div>
     </div>
 
