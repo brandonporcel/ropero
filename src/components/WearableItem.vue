@@ -62,19 +62,19 @@ function hideCursor() {
 <template>
   <WearableTypeList :selectedNumber="wearable.type" />
 
-  <section class="my-2 px-22">
+  <section class="my-2 px-2 md:px-12 lg:px-22">
     <p v-if="wearable.description" class="text-xs mb-2 text-justify">
       {{ wearable.description }}
     </p>
     <img :src="wearable.thumbnail" :alt="wearable.name" />
   </section>
 
-  <section v-if="wearable.sizes" class="my-2 px-22">
+  <section v-if="wearable.sizes" class="my-2 px-2 md:px-12 lg:px-22">
     <h2 class="text-sm font-medium">Sizes</h2>
     <p class="text-xs">Autoregulable</p>
   </section>
 
-  <section v-if="wearable.composition" class="my-2 px-22">
+  <section v-if="wearable.composition" class="my-2 px-2 md:px-12 lg:px-22">
     <h2 class="text-sm font-medium">Composition</h2>
     <p class="text-xs">
       <template v-for="(value, key) in wearable.composition" :key="key">
@@ -83,7 +83,7 @@ function hideCursor() {
     </p>
   </section>
 
-  <section v-if="recommendedProgram" class="mt-4 px-22 relative z-[300]">
+  <section v-if="recommendedProgram" class="mt-4 px-2 md:px-12 lg:px-22 relative z-[300]">
     <div class="flex items-center justify-center gap-2">
       <component
         v-tooltip="washInstructionText[instruction]"
@@ -121,11 +121,11 @@ function hideCursor() {
     {{ recommendedProgram }}
   </p>
 
-  <footer :class="wearable.extra?.length ? '' : 'mb-[35%]'">
+  <footer>
     <h1 class="font-bold text-center">ROPERO</h1>
   </footer>
 
-  <section v-if="wearable.extra?.length" class="mt-4 px-22 relative z-[300] mb-[25%]">
+  <section v-if="wearable.extra?.length" class="mt-4 px-2 md:px-12 lg:px-22 relative z-[300]">
     <ul>
       <li v-for="instruction in wearable.extra" :key="instruction" class="text-xs list-disc">
         {{ extraWashDescriptions[instruction] }}

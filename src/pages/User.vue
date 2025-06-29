@@ -28,7 +28,7 @@ watch(
 </script>
 
 <template>
-  <Layout class="px-2 md:px-0 lg:px-0">
+  <Layout class="px-2 md:px-0">
     <h1 class="font-sm font-medium italic text-cyan-400 mb-4 lowercase">
       {{ username }}
     </h1>

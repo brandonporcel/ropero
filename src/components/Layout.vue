@@ -11,7 +11,7 @@ const darkStore = useDarkModeStore();
 </script>
 
 <template>
-  <main
+  <div
     class="min-h-screen transition-colors duration-500 bg-[#F3F3F3]"
     :class="{ 'bg-slate-600': darkStore.isDark }"
   >
@@ -41,5 +41,5 @@ const darkStore = useDarkModeStore();
     <RouterLink class="fixed bottom-4 right-4 hover:opacity-70" alt="Help" to="/about">
       <CircleHelp class="cursor-pointer" />
     </RouterLink>
-  </main>
+  </div>
 </template>
