@@ -1,45 +1,37 @@
-# ropero
+# 👗 Ropero
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple app to help you take care of your clothes.
 
-## Recommended IDE Setup
+> Backend API: [https://github.com/brandonporcel/ropero-backend](https://github.com/brandonporcel/ropero-backend)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![cover page project](public/og.png)
 
-## Type Support for `.vue` Imports in TS
+## Install
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+git clone https://github.com/brandonporcel/ropero.git
+cd ropero
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## To-Do
 
-```sh
-npm run build
-```
+- [ ] Carousel of images
+- [ ] Improve ux
+- [ ] Add login and manage personal wardrobe
+- [ ] Make washing machine unique for each user
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+---
 
-```sh
-npm run test:unit
-```
+## Contributing
 
-### Lint with [ESLint](https://eslint.org/)
+Contributions are always welcome! Feel free to submit issues or pull requests.
 
-```sh
-npm run lint
-```
+## Feedback
+
+I’d love to hear your thoughts! Contact me via [mail](brandon7.7porcel@gmail.com) or [linkedin](https://www.linkedin.com/in/brandonporcel/)
+
+<!--
+https://www.instagram.com/causto_official
+ -->
