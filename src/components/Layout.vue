@@ -22,7 +22,7 @@ const darkStore = useDarkModeStore();
     </main>
 
     <button
-      class="cursor-pointer fixed top-4 right-4 hover:opacity-70 transition-transform duration-300"
+      class="cursor-pointer fixed top-4 right-4 hover:opacity-70 transition-transform duration-300 z-[300]"
       @click="
         {
           darkStore.toggleDark();
@@ -38,7 +38,7 @@ const darkStore = useDarkModeStore();
       <Sun v-else class="transition-transform duration-300 rotate-0 hover:-rotate-12" />
     </button>
 
-    <RouterLink class="fixed bottom-4 right-4 hover:opacity-70" alt="Help" to="/about">
+    <RouterLink class="fixed bottom-4 right-4 hover:opacity-70 z-[300]" alt="Help" to="/about">
       <CircleHelp class="cursor-pointer" />
     </RouterLink>
   </div>

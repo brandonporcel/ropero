@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
+import { onMounted, toRaw, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
+import type { WashMachineProgram, Wearable } from '@/lib/types';
 import Layout from '@/components/Layout.vue';
 import { useWearableStore } from '@/stores/wearable';
+import getRecommendedProgram from '@/utils/recommendedProgram';
 
 const route = useRoute();
 const router = useRouter();
@@ -21,8 +23,21 @@ onMounted(() => {
 
 watch(
   () => store.items,
-  (newItems) => {
-    console.log('Cambió store.items:', newItems);
+  (wearables) => {
+    console.log('Wearables:', toRaw(wearables));
+    const getMainKeys = (program: WashMachineProgram) => {
+      const draft = wearables.filter((wearable) => getRecommendedProgram(wearable) === program);
+      return draft.map((wearable) => wearable.slug);
+    };
+
+    const items: Record<WashMachineProgram, string[]> = {
+      'Ropa Deportiva': getMainKeys('Ropa Deportiva'),
+      Algodón: getMainKeys('Algodón'),
+      Jeans: getMainKeys('Jeans'),
+      Sintético: getMainKeys('Sintético'),
+      'Lavado a Mano': getMainKeys('Lavado a Mano'),
+    };
+    console.log(JSON.parse(JSON.stringify(items)));
   },
 );
 </script>

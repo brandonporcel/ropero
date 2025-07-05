@@ -5,7 +5,7 @@ import Layout from '@/components/Layout.vue';
 </script>
 
 <template>
-  <Layout class="px-22">
+  <Layout class="px-2 md:px-12 lg:px-22">
     <router-link class="block mx-auto w-max" to="/">
       <House class="cursor-pointer" alt="Home" />
     </router-link>
