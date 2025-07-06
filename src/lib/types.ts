@@ -44,7 +44,6 @@ export interface Wearable {
     rise: number;
     waist: number;
     botamaga: number;
-    height: number;
     total_large: number;
     total_width: number;
     shoulders_width: number;

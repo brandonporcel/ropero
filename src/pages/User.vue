@@ -67,7 +67,7 @@ watch(
         <img
           :src="wearable.thumbnail || defaultImage"
           :alt="wearable.name"
-          :title="wearable.name"
+          :title="wearable.name || wearable.slug"
           class="w-full h-full object-cover"
         />
       </div>
