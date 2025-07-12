@@ -1,6 +1,7 @@
 import type { ExtraWashInstruction, WashInstruction, WashMachineProgram } from '@/lib/types';
 import BleachAllowed from '@/components/icons/BleachAllowed.vue';
 import DryClean from '@/components/icons/DryClean.vue';
+import DryInPosition from '@/components/icons/DryInPosition.vue';
 import HandWash from '@/components/icons/HandWash.vue';
 import Ironing1 from '@/components/icons/Ironing1.vue';
 import Ironing2 from '@/components/icons/Ironing2.vue';
@@ -27,6 +28,7 @@ export const washIcons: Record<WashInstruction, any> = {
   handWash: HandWash,
   dryClean: DryClean,
   dryCleanHydrocarbons: DryClean,
+  dryInPosition: DryInPosition,
   tumbleHang: TumbleHang,
   noDryClean: NoDryClean,
   removePromptly: RemovePromptly,
@@ -44,6 +46,7 @@ export const washInstructionText: Record<WashInstruction, string> = {
   dryCleanHydrocarbons: 'Lavado en seco con hidrocarburos',
   noDryClean: 'No lavar en seco.',
   tumbleDry: 'Usar secadora',
+  dryInPosition: 'Secar prenda en esa posición',
   tumbleDryLow: 'Usar secadora en baja temperatura',
   tumbleDryNormal: 'Usar secadora en temperatura normal',
   noTumbleDry: 'No usar secadora',

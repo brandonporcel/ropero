@@ -6,6 +6,7 @@ export type WashInstruction =
   | 'dryClean'
   | 'tumbleHang'
   | 'noDryClean'
+  | 'dryInPosition'
   | 'dryCleanHydrocarbons'
   | 'bleachAllowed'
   | 'noBleachAllowed'
