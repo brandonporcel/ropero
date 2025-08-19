@@ -4,7 +4,6 @@ import { RouterLink } from 'vue-router';
 
 import { useDarkModeStore } from '@/stores/darkMode';
 
-// @ts-ignore
 import CustomFollower from './CursorFollower.vue';
 
 const darkStore = useDarkModeStore();

@@ -18,6 +18,7 @@
     "@tailwindcss/vite": "^4.1.10",
     "floating-vue": "^5.2.2",
     "lucide-vue-next": "^0.515.0",
+    "motion-v": "^1.7.0",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.10",
     "vue": "^3.5.13",
